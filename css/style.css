@@ -1,6 +1,55 @@
 
 /* Mobile first - default styles */
+body {
+	margin: 0px;
+	font-family: 'Cutive Mono', sans-serif;
+}
 
+h1, h2, h3, h4, h5, h6 {
+
+	font-family: 'Arizonia', cursive;
+}
+
+div.container {
+	width: 100%;
+}
+
+div.row {
+	padding: 30px;
+}
+
+ul#main-nav{
+	list-style-type: none;
+}
+
+#main-nav li {
+
+	display: inline;
+}
+
+a {
+	text-decoration: none;
+	padding: 15px;
+	color: #FF0300;
+}
+
+a#headerLink{
+	position: fixed;
+    top: 100px;
+    left: 20px;
+}
+
+div#header img{
+	width: 100%;
+}
+
+div#location {
+	color: #ffffff;
+}
+
+div#location {
+	background: #FF0300;
+}
 
 /*Small devices (tablets, 768px and up)*/
 /*@media (min-width: 768px) {
