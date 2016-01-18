@@ -19,6 +19,8 @@
 
 				<h1>Larry and Kaitlynn's Wedding</h1>
 
+				<img src="assets/inviteHeader.png">
+
 				<ul id="main-nav">
 					<li><a href="#location">location</a></li>
 					<li><a href="#our-story">our story</a></li>
@@ -28,9 +30,6 @@
 				</ul>
 
 				<a id="headerLink" href="#header"><p>Back to Top</p></a>
-
-				<img src="assets/nye.2016.jpg">
-
 			</div>
 
 		</div>
@@ -38,15 +37,28 @@
 			<div class="column twelve" >
 
 				<h2>When & Where</h2>
-				<p>October 8th 2016? Austin, TX</p>
+				<p>Saturday, October 8th 2016 Austin, TX</p>
 				<p>See map & directions</p>
+
+				<button type="button" class="button more whenWhere" data-section="whenWhere">More</button>
+				<div class="more whenWhere" data-section="whenWhere">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.7144440478296!2d-97.88699204931945!3d30.130983621345177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865b4e6d3c2c42e9%3A0xca4332820dcdfbf5!2sBear+Creek+Retreat!5e0!3m2!1sen!2sus!4v1453125246712" width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+
 			</div>
 		</div>
 		<div class="row" id="our-story">
 			<div class="column twelve">
 				<h2>Our Story</h2>
 				<p>We met on the internet. It was awesome.</p>
-				
+
+				<img src="assets/nye.2016.jpg">
+
+
+				<button type="button" class="button more ourStory" data-section="ourStory">More</button>
+				<div class="more ourStory" data-section="ourStory">
+					more details about our story.
+				</div>
 			</div>
 		</div>
 		<div class="row" id="events-schedule">
@@ -67,12 +79,13 @@
 			<div class="column twelve">
 				
 				<h2>Travel Accomodations</h2>
-				<p>Hotel blocks..airport etc.</p>
+				<p>Hotel blocks...airport etc.</p>
 			</div>
 		</div>
 
 	</div>
 
+<script src="js/jquery-1.11.2.js"></script>
 <script src="js/main.js"></script>
 
 </body>
