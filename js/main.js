@@ -5,17 +5,17 @@ $(document).ready(function(){
 
   console.log('ready');
 
-  let moreButtons = document.querySelectorAll('button.more');
+ //  let moreButtons = document.querySelectorAll('button.more');
 
-  console.log('moreButtons is ', moreButtons);
+ //  console.log('moreButtons is ', moreButtons);
 
-	for ( let b = 0 ; b < moreButtons.length ; b++ ){
+	// for ( let b = 0 ; b < moreButtons.length ; b++ ){
 
-		console.log('moreButtons[b] is', moreButtons[b].dataset.section); 
+	// 	console.log('moreButtons[b] is', moreButtons[b].dataset.section); 
 
-		let currentSection = moreButtons[b].dataset.section; 
+	// 	let currentSection = moreButtons[b].dataset.section; 
 
-		console.log('currentSection is ',currentSection);
-	}
+	// 	console.log('currentSection is ',currentSection);
+	// }
 
 });
