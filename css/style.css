@@ -15,9 +15,9 @@ div.container {
 	padding-top: 2%;
 }
 
-div.row {
+/*div.row {
 	padding: 30px;
-}
+}*/
 
 ul#main-nav{
 	list-style-type: none;
@@ -44,8 +44,8 @@ a#headerLink{
     left: 20px;
 }
 
-div#header img{
-	width: 100%;
+img#inviteHeader {
+	padding-top: 30px;
 }
 
 div#travel, div#our-story {
