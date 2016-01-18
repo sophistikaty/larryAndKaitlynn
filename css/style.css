@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6 {
 
 div.container {
 	width: 100%;
+	padding-top: 2%;
 }
 
 div.row {
@@ -56,17 +57,23 @@ div#our-story {
 }
 
 div#travel {
-	background: #E55A20;
+	background: #A02205;
 }
 
-p.announceHeader, h1.announceHeader {
+p.announceHeader, h1.announceHeader, div.announceHeader {
 	margin:0;
-	padding: 0 5%;
+	padding: 0;
+	text-align: -webkit-center;
+}
+
+div.spacer{
+	height: 1px;
+    color: #ffffff;
 }
 
 /*Small devices (tablets, 768px and up)*/
-@media (min-width: 768px) {
-}
+/*@media (min-width: 768px) {
+}*/
 	
 /*Medium devices (desktops, 992px and up)*/
 /*@media (min-width: 992px) {	
