@@ -59,6 +59,11 @@ div#location {
 	background: #E55A20;
 }
 
+p.announceHeader, h1.announceHeader {
+	margin:0;
+	padding: 0 5%;
+}
+
 /*Small devices (tablets, 768px and up)*/
 /*@media (min-width: 768px) {
 }*/
