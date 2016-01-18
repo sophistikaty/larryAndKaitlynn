@@ -47,15 +47,15 @@ div#header img{
 	width: 100%;
 }
 
-div#location, div#our-story {
+div#travel, div#our-story {
 	color: #ffffff;
 }
 
 div#our-story {
-	background: #1E0863;
+	background: #082D3A;
 }
 
-div#location {
+div#travel {
 	background: #E55A20;
 }
 
