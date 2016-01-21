@@ -26,6 +26,7 @@ ul#main-nav{
 #main-nav li {
 
 	display: inline;
+	font-weight: bolder;
 }
 
 a {
