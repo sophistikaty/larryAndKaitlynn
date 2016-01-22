@@ -72,6 +72,18 @@ div.spacer{
     color: #ffffff;
 }
 
+div.sectionWrapper{
+	padding: 10px 20px;
+}
+
+button.button{
+	background: #ffffff;
+}
+
+img.accent{
+	width: 80%;
+}
+
 /*Small devices (tablets, 768px and up)*/
 /*@media (min-width: 768px) {
 }*/
