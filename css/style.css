@@ -84,6 +84,24 @@ img.accent{
 	width: 80%;
 }
 
+img.lightbulb {
+    position: fixed;
+    top: 0px;
+}
+
+img.lightbulb.right {
+
+    right: 0px;
+	width: 11%;
+}
+
+img.lightbulb.left {
+	
+    left: 9px;
+    width: 4%;
+    top: 0px;
+}
+
 /*Small devices (tablets, 768px and up)*/
 /*@media (min-width: 768px) {
 }*/
