@@ -5,20 +5,19 @@ $(document).ready(function(){
 
   console.log('ready');
 
- //  let moreButtons = document.querySelectorAll('button.more');
+ let headerLinkNav = function(event){
 
- //  console.log('moreButtons is ', moreButtons);
+  		console.log('event.target.dataset.hash is ',event.target.dataset.hash);
+  		if (event.target.dataset.hash != undefined){
+  			
+	  		location.hash = "#"+event.target.dataset.hash;
+  		}
 
-	// for ( let b = 0 ; b < moreButtons.length ; b++ ){
+  	}
 
-	// 	console.log('moreButtons[b] is', moreButtons[b].dataset.section); 
+  	document.querySelector("#topNav").addEventListener('click', headerLinkNav);
 
-	// 	let currentSection = moreButtons[b].dataset.section; 
-
-	// 	console.log('currentSection is ',currentSection);
-	// }
-
-	var slider = document.querySelector('#carousel');
+	let slider = document.querySelector('#carousel');
 		// previous = document.getElementsByClassName('icon-right-open-big');
 		// next = document.getElementsByClassName('icon-left-open-big');
 
@@ -45,7 +44,7 @@ $(document).ready(function(){
 
   		console.log('event.target.dataset.link is ',event.target.dataset.link);
   		if (event.target.dataset.link != 'travelBtns'){
-  			
+
 	  		let travelItems = document.querySelectorAll('.travelItem');
 	  		for ( let i = 0 ; i < travelItems.length ; i++ ){ 
 
