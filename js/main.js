@@ -41,15 +41,24 @@ $(document).ready(function(){
 
   	});
 
-  	// infinite: true,
-			// 		centerMode: true,
-  	// 				variableWidth: true,
-			// 	  // slidesToShow: 1,
-			// 	  slidesToScroll: 1,
-			// 	  autoplay: true,
-			// 	  autoplaySpeed: 4000,
-			// 	  respondTo: cardSlider.firstChild,
-			// 	  prevArrow: "<div class='icon-left-open-big slick-prev'></div>",
-			// 	  nextArrow: "<div class='icon-right-open-big slick-next'></div>"
+  	let showItem = function(event){
+
+  		console.log('event.target.dataset.link is ',event.target.dataset.link);
+  		if (event.target.dataset.link != 'travelBtns'){
+  			
+	  		let travelItems = document.querySelectorAll('.travelItem');
+	  		for ( let i = 0 ; i < travelItems.length ; i++ ){ 
+
+	  			travelItems[i].style.display = 'none';
+	  		}
+
+	  		let showTravelItem = document.querySelector('#'+event.target.dataset.link);
+	  		showTravelItem.style.display = "block";
+  		}
+
+  	}
+
+  	document.querySelector('#austin').style.display = 'block';
+  	document.querySelector("#travelBtns").addEventListener('click', showItem);
 
 });

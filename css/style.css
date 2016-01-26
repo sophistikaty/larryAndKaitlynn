@@ -1,6 +1,6 @@
 
 /* Mobile first - default styles */
-body {
+body{
 	margin: 0px;
 	font-family: 'Cutive Mono', sans-serif;
 }
@@ -9,6 +9,21 @@ h1, h2, h3, h4, h5, h6 {
 
 	font-family: 'Arizonia', cursive;
 }
+
+button.button {
+	margin: 10px;
+	font-family: 'Cutive Mono', sans-serif;
+	border-color: rgb(253,203,108);
+    color: #000000;
+    font-weight: 900;
+    font-size: 15px;
+    text-transform: lowercase;
+}
+
+button.button:hover, button.button:active {
+	border-color: rgb(253,203,108);
+	color: #E55A20;
+}	
 
 div.container {
 	width: 100%;
@@ -88,6 +103,9 @@ div.container {
 	padding-bottom: 20px;
 }
 
+div.travelItem {
+	display: none;
+}
 
 
 /*div.row {
@@ -186,7 +204,7 @@ img.lightbulb.right {
 
     right: 0px;
 	width: 11%;
-	
+
 }
 
 img.lightbulb.left {
@@ -303,6 +321,7 @@ hr#travelHR{
 		justify-content:center;
 		align-items: center;
 	}
+
 
 	.travelItem p.leftHeader{
   		padding-left: 40px;
