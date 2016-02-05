@@ -59,7 +59,47 @@ $(document).ready(function(){
 
   	document.querySelector('#austin').style.display = 'block';
   	document.querySelector("#travelBtns").addEventListener('click', showItem);
-  	// document.querySelector("#rsvpBtns").addEventListener('click', showItem);
+
+
+	var showItemGuide = function(event){
+
+  		console.log('event.target.dataset.link is ',event.target.dataset.link);
+  		if (event.target.dataset.link != 'guideButtons'){
+
+	  		var buttonItems = document.querySelectorAll('.guideParent p.rightText');
+	  		for ( var i = 0 ; i < buttonItems.length ; i++ ){ 
+
+	  			buttonItems[i].style.display = 'none';
+	  		}
+
+	  		var showItem = document.querySelector('#'+event.target.dataset.link);
+	  		showItem.style.display = "block";
+  		}
+
+  	}
+
+  	document.querySelector('#acl').style.display = 'block';
+  	document.querySelector("#guideMenu").addEventListener('click', showItemGuide);
+
+  	var showItemRsvp = function(event){
+
+  		console.log('event.target.dataset.link is ',event.target.dataset.link);
+  		if (event.target.dataset.link != 'rsvpBtns'){
+
+	  		var buttonItems = document.querySelectorAll('.rsvpItem');
+	  		for ( var i = 0 ; i < buttonItems.length ; i++ ){ 
+
+	  			buttonItems[i].style.display = 'none';
+	  		}
+
+	  		var showItem = document.querySelector('#'+event.target.dataset.link);
+	  		showItem.style.display = "block";
+  		}
+
+  	}
+
+  	document.querySelector('#postage').style.display = 'block';
+  	document.querySelector("#rsvpBtns").addEventListener('click', showItemRsvp);
 
   	var initiateCall = function(event){
   		console.log('event.target.id is ',event.target.id);

@@ -107,7 +107,7 @@ div.container {
 	padding-bottom: 20px;
 }
 
-div.travelItem {
+div.travelItem, .guideParent p.rightText, .rsvpItem{
 	display: none;
 }
 
