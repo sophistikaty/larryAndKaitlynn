@@ -5,7 +5,7 @@ body{
 	font-family: 'Cutive Mono', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
 
 	font-family: 'Arizonia', cursive;
 }
@@ -107,9 +107,23 @@ div.container {
 	padding-bottom: 20px;
 }
 
-div.travelItem {
+div.travelItem, .guideParent p.rightText, .rsvpItem{
 	display: none;
 }
+
+.guideParent{
+	display:flex;
+	flex-direction:row;
+}
+.guideParent .guideMenu{
+	flex-direction:column;
+	width:30%;
+}
+.guideParent p.rightText{
+	padding-left: 20px;
+	text-align: left;
+}
+
 
 
 /*div.row {

@@ -3,21 +3,21 @@ $(document).ready(function(){
 
 	'use strict';
 
-  console.log('ready');
+  	console.log('ready');
+	
+	var headerLinkNav = function(event){
 
- let headerLinkNav = function(event){
+		console.log('event.target.dataset.hash is ',event.target.dataset.hash);
+		if (event.target.dataset.hash != undefined){
+			
+			location.hash = "#"+event.target.dataset.hash;
+		}
 
-  		console.log('event.target.dataset.hash is ',event.target.dataset.hash);
-  		if (event.target.dataset.hash != undefined){
-  			
-	  		location.hash = "#"+event.target.dataset.hash;
-  		}
-
-  	}
+	}
 
   	document.querySelector("#topNav").addEventListener('click', headerLinkNav);
 
-	let slider = document.querySelector('#carousel');
+	var slider = document.querySelector('#carousel');
 		// previous = document.getElementsByClassName('icon-right-open-big');
 		// next = document.getElementsByClassName('icon-left-open-big');
 
@@ -40,18 +40,18 @@ $(document).ready(function(){
 
   	});
 
-  	let showItem = function(event){
+  	var showItem = function(event){
 
   		console.log('event.target.dataset.link is ',event.target.dataset.link);
   		if (event.target.dataset.link != 'travelBtns'){
 
-	  		let travelItems = document.querySelectorAll('.travelItem');
-	  		for ( let i = 0 ; i < travelItems.length ; i++ ){ 
+	  		var travelItems = document.querySelectorAll('.travelItem');
+	  		for ( var i = 0 ; i < travelItems.length ; i++ ){ 
 
 	  			travelItems[i].style.display = 'none';
 	  		}
 
-	  		let showTravelItem = document.querySelector('#'+event.target.dataset.link);
+	  		var showTravelItem = document.querySelector('#'+event.target.dataset.link);
 	  		showTravelItem.style.display = "block";
   		}
 
@@ -60,4 +60,129 @@ $(document).ready(function(){
   	document.querySelector('#austin').style.display = 'block';
   	document.querySelector("#travelBtns").addEventListener('click', showItem);
 
+
+	var showItemGuide = function(event){
+
+  		console.log('event.target.dataset.link is ',event.target.dataset.link);
+  		if (event.target.dataset.link != 'guideButtons'){
+
+	  		var buttonItems = document.querySelectorAll('.guideParent p.rightText');
+	  		for ( var i = 0 ; i < buttonItems.length ; i++ ){ 
+
+	  			buttonItems[i].style.display = 'none';
+	  		}
+
+	  		var showItem = document.querySelector('#'+event.target.dataset.link);
+	  		showItem.style.display = "block";
+  		}
+
+  	}
+
+  	document.querySelector('#acl').style.display = 'block';
+  	document.querySelector("#guideMenu").addEventListener('click', showItemGuide);
+
+  	var showItemRsvp = function(event){
+
+  		console.log('event.target.dataset.link is ',event.target.dataset.link);
+  		if (event.target.dataset.link != 'rsvpBtns'){
+
+	  		var buttonItems = document.querySelectorAll('.rsvpItem');
+	  		for ( var i = 0 ; i < buttonItems.length ; i++ ){ 
+
+	  			buttonItems[i].style.display = 'none';
+	  		}
+
+	  		var showItem = document.querySelector('#'+event.target.dataset.link);
+	  		showItem.style.display = "block";
+  		}
+
+  	}
+
+  	document.querySelector('#postage').style.display = 'block';
+  	document.querySelector("#rsvpBtns").addEventListener('click', showItemRsvp);
+
+  	var initiateCall = function(event){
+  		console.log('event.target.id is ',event.target.id);
+  		var phoneNumber = document.querySelector('#phoneNumber').value;
+  		console.log(phoneNumber);
+  		var pattern = /^[0-9]{10}$/;
+  		if (! pattern.test(phoneNumber)){
+  			alert('Please type in your number without spaces, hyphens, or slashes.');
+  		}else{
+  			var dataObj = {
+				data: {
+					phoneNumber: "+1"+phoneNumber
+				},
+				options: {
+					hostname: 'gckwbgo7j7.execute-api.us-east-1.amazonaws.com',
+					path: '/prod/makeCall',
+					port: '443',
+					method: 'POST'
+				}
+			};
+			
+			console.log(dataObj);
+
+			$.ajax({
+				type: 'POST',
+				url: 'https://gckwbgo7j7.execute-api.us-east-1.amazonaws.com/prod/initiateCall',
+				data: JSON.stringify(dataObj),
+				success: function(newNumber){
+					console.log('Call to initiateText succeeded');
+					document.querySelector('#phoneNumber').value = "";
+				},
+				error: function(j, s, e){
+					console.log('Error calling initiateText');
+					console.log(j,s,e);
+					document.querySelector('#phoneNumber').value = "";
+				}
+			});
+  		}
+
+		
+	}
+  	
+  	document.querySelector("#initiateCall").addEventListener('click', initiateCall);
+
+  	var initiateText = function(event){
+  		console.log('event.target.id is ',event.target.id);
+  		var phoneNumber = document.querySelector('#textPhoneNumber').value;
+  		console.log(phoneNumber);
+  		var pattern = /^[0-9]{10}$/;
+  		if (! pattern.test(phoneNumber)){
+  			alert('Please type in your number without spaces, hyphens, or slashes.');
+  		}else{
+  			var dataObj = {
+				data: {
+					phoneNumber: "+1"+phoneNumber
+				},
+				options: {
+					hostname: 'gckwbgo7j7.execute-api.us-east-1.amazonaws.com',
+					path: '/prod/makeSms',
+					port: '443',
+					method: 'POST'
+				}
+			};
+			
+			console.log(dataObj);
+
+			$.ajax({
+				type: 'POST',
+				url: 'https://gckwbgo7j7.execute-api.us-east-1.amazonaws.com/prod/initiateCall',
+				data: JSON.stringify(dataObj),
+				success: function(newNumber){
+					console.log('Call to initiateText succeeded');
+					document.querySelector('#textPhoneNumber').value = "";
+				},
+				error: function(j, s, e){
+					console.log('Error calling initiateText');
+					console.log(j,s,e);
+					document.querySelector('#textPhoneNumber').value = "";
+				}
+			});
+  		}
+
+		
+	}
+	document.querySelector("#initiateText").addEventListener('click', initiateText);
 });
