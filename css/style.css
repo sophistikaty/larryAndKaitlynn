@@ -10,6 +10,17 @@ h1, h2, h3 {
 	font-family: 'Arizonia', cursive;
 }
 
+h5.countdown {
+
+	font-family: 'Cutive Mono', sans-serif;
+}
+
+h5.countdown span.countdown {
+
+	font-size: 40px;
+	color: #E55A20;
+}
+
 button.button {
 	border: 1px solid #fff;
 	color: #E55A20;

@@ -185,4 +185,79 @@ $(document).ready(function(){
 		
 	}
 	document.querySelector("#initiateText").addEventListener('click', initiateText);
+
+	var countdown = function (){
+
+		var date = new Date();
+
+		console.log( date );
+
+		var weddingDate = new Date('October 8 2016');
+			weddingDate.setUTCHours(20);
+
+		var countdownObj = {
+			'Months': { 'value': weddingDate.getMonth() - date.getMonth(),
+						'totalCount': 12
+					},
+			'Days': { 'value': weddingDate.getDate() - date.getDate(),
+						'totalCount': 31
+					},
+			'Hours': { 'value': weddingDate.getHours() - date.getHours(),
+						'totalCount': 24
+					},
+			'Minutes': { 'value': weddingDate.getMinutes() - date.getMinutes(),
+						'totalCount': 60
+					},
+			'Seconds': { 'value': weddingDate.getSeconds() - date.getSeconds(),
+						'totalCount': 60
+					},
+
+		}
+
+		for ( var key in countdownObj ) { 
+
+			var value = countdownObj[key].value; 
+
+			if ( value < 0 ){ 
+
+				console.log (key, value, countdownObj[prevkey]); 
+
+				countdownObj[prevkey].value = countdownObj[prevkey].value-1; 
+
+				countdownObj[key].value = countdownObj[key].totalCount + countdownObj[key].value;
+
+			} 
+
+			var prevkey = key;
+		}
+
+		return countdownObj;
+		
+	};
+
+	var updateCountdown = function (){
+
+		var currentCount = countdown();
+
+		var countdownText = '<h5 class="countdown"> <span class="countdown">' + 
+							currentCount.Months.value + '</span> Months <span class="countdown">' +
+							currentCount.Days.value + '</span> Days <span class="countdown">' +
+							currentCount.Hours.value + '</span> Hours <span class="countdown">' + 
+							currentCount.Minutes.value + '</span> Minutes <span class="countdown">' + 
+							currentCount.Seconds.value + '</span> Seconds </h5>';
+
+		$('div#countdown').html(countdownText);
+
+		timeToUpdateCountdown();
+
+	};
+
+	var timeoutID;
+
+	function timeToUpdateCountdown() {
+
+	  timeoutID = window.setTimeout( updateCountdown , 500 );
+	}
+
+	updateCountdown();
 });
