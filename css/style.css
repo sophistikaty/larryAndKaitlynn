@@ -38,7 +38,7 @@ button.button:hover, button.button:active
 	color: #000000;
 	height: 45px;
 	line-height: 45px;
-}	
+}
 
 div.container {
 	width: 100%;
@@ -86,6 +86,10 @@ div.container {
 .itemParent p.leftText{
 	padding-right: 20px;
 	text-align: left;
+}
+
+#hotels .itemParent {
+	flex-direction: column;
 }
 
 .itemRight{
@@ -256,7 +260,7 @@ img.lightbulb.right {
 }
 
 img.lightbulb.left {
-	
+
     left: 12px;
     width: 4%;
     top: 0px;
@@ -332,7 +336,7 @@ img.slider{
 }
 
 .slick-next {
-	position: absolute ; 
+	position: absolute ;
 	    top: 170px;
  		right: 0px;
 }
@@ -347,8 +351,8 @@ hr{
 }
 
 hr#travelHR{
-	border: 0; 
-	height: 1px; 
+	border: 0;
+	height: 1px;
 	color: rgb(253,203,108);
 	background-color: rgb(253,203,108);
 	width: 80%;
@@ -396,7 +400,7 @@ hr#travelHR{
   	img.accent{
 		width: 65%;
 	}
-	
+
 	img#photo{
 		width: 90%;
 	}
@@ -474,7 +478,7 @@ hr#travelHR{
   	img.accent{
 		width: 40%;
 	}
-	
+
 	img#photo{
 		width: 80%;
 	}
@@ -507,11 +511,11 @@ hr#travelHR{
 /*Small devices (tablets, 768px and up)*/
 /*@media (min-width: 768px) {
 }*/
-	
+
 /*Medium devices (desktops, 992px and up)*/
-/*@media (min-width: 992px) {	
+/*@media (min-width: 992px) {
 }*/
-	
-/*Large devices (large desktops, 1200px and up)*/ 
+
+/*Large devices (large desktops, 1200px and up)*/
 /*@media (min-width: 1200px) {
 }*/
