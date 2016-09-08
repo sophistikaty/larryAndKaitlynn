@@ -193,7 +193,7 @@ $(document).ready(function(){
 		console.log( date );
 
 		var weddingDate = new Date('October 8 2016');
-			weddingDate.setUTCHours(20);
+			weddingDate.setUTCHours(21);
 
 		var countdownObj = {
 			'Months': { 'value': weddingDate.getMonth() - date.getMonth(),
